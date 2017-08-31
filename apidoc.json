@@ -1,0 +1,9 @@
+{
+    "name": "Growish API",
+    "version": "1.0.0",
+    "description": "Growish API documentation",
+    "header": {
+        "title": "Start here",
+        "filename": "header.md"
+    }
+}
