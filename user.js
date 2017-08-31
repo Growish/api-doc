@@ -49,3 +49,19 @@
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('newUser').save({ firstName:"Jhon",lastName:"Smith",email:"foo1@email.com",birthday:"1986-03-19",canBeContacted:1, marketingEmail:1 }).then(function success(user) { }, function error(err) { });
  */
+
+/**
+ * @api{get} /user/:userId/list/:listId/ Request User's Lists
+ * @apiParam {String} userId User unique Id
+ * @apiParam {String} listId List unique Id
+ * @apiName getUserLists
+ * @apiGroup User
+ * @apiPermission Owner
+ * @apiSuccessExample Owner response example
+ * {"code":200,"message":"OK","data":[{"id":"596f1268ff9822b21b8b4598","brideName":"Her","groomName":"Him","weddingDate":"2017-07-31 00:00:00","amount":0},{"id":"59130875ff98228f178b4570","brideName":"Another","groomName":"Foo","weddingDate":"2017-05-24 00:00:00","amount":0}],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/user\/53b157b19a6b51c4048b4572\/list\/","method":"GET"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('user.list', 'someUserId', 'someListId').read().then(function success(userLists) { }, function error(err) { });
+ */

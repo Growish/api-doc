@@ -1,0 +1,16 @@
+/**
+ * @api{get} /business/?lat=:lat&lon=:lon&filterByName=:name&filterByType Request Business in a area
+ * @apiParam {Number} lat Latitude.
+ * @apiParam {Number} lon Longitude.
+ * @apiParam {String} [filterByName] Complete or partial name of the business.
+ * @apiParam {String} [filterByType] Accepted values: "physical" and "online".
+ * @apiName getBusinessByArea
+ * @apiGroup Business
+ * @apiPermission Public
+ * @apiSuccessExample Public response example
+ * {"code":200,"message":"OK","data":[{"id":"596f1268ff9822b21b8b4598","name":"Foo Business 1","category":"Foo1Category","distance":"1.5Km","promo":"","lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"},{"id":"596f1268ff98SSb21b8b4598","name":"Foo Business 2","category":"Foo2Category","distance":"100m","promo":"","lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"}],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/business\/?lat=12&lon=11","method":"GET"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('business').read({lat: 12, lon: 11}).then(function success(business) { }, function error(err) { });
+ */
