@@ -1,6 +1,6 @@
 /**
  * @apiDefine Owner Owner access only
- * Only the author of this asset can read it, a token from the author is required.
+ * Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.
  */
 
 /** @apiDefine Public No token is required to access this asset */
