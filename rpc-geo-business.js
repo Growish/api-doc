@@ -1,5 +1,5 @@
 /**
- * @api{get} /business/?lat=:lat&lon=:lon&radius=:radius&network=nozzepay&filterByName=:name&filterByType Request Business in a area
+ * @api{get} /business/?lat=:lat&lon=:lon&radius=:radius&network=:networkName&filterByName=:name&filterByType Request Business in a area
  * @apiParam {Number} lat Latitude.
  * @apiParam {Number} lon Longitude.
  * @apiParam {Number} radius Radius in meters around lat, lon center (Max 50000).
