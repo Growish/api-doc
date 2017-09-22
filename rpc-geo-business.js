@@ -1,7 +1,8 @@
 /**
- * @api{get} /business/?lat=:lat&lon=:lon&filterByName=:name&filterByType Request Business in a area
+ * @api{get} /business/?lat=:lat&lon=:lon&radius=2500&filterByName=:name&filterByType Request Business in a area
  * @apiParam {Number} lat Latitude.
  * @apiParam {Number} lon Longitude.
+ * @apiParam {Number} radius Radius in meters around lat, lon center (Max 50000).
  * @apiParam {String} [filterByName] Complete or partial name of the business.
  * @apiParam {String} [filterByType] Accepted values: "physical" and "online".
  * @apiName getBusinessByArea
