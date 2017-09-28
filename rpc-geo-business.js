@@ -15,5 +15,5 @@
  * @apiVersion 1.0.0
  * @apiUse AppKey
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('business').read({lat: 45, lon: 9, radius: 1000, network: netexample}).then(function success(business) { }, function error(err) { });
+ * gwApi.request('business').read({lat: 45, lon: 9, radius: 1000, network: "netexample"}).then(function success(business) { }, function error(err) { });
  */

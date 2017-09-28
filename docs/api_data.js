@@ -158,7 +158,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Angular Growish API Client:",
-        "content": "gwApi.request('business').read({lat: 45, lon: 9, radius: 1000, network: netexample}).then(function success(business) { }, function error(err) { });",
+        "content": "gwApi.request('business').read({lat: 45, lon: 9, radius: 1000, network: \"netexample\"}).then(function success(business) { }, function error(err) { });",
         "type": "js"
       }
     ],
