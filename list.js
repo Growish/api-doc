@@ -34,3 +34,23 @@
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('newListWallet').save({ brideName:"Miss Smith",groomName:"Smith",weddingDate:"2018-03-19",province: "AN" }).then(function success(listWallet) { }, function error(err) { });
  */
+
+/**
+ * @api{post} /charge-wallet/ Recharge List Wallet (wedding list)
+ * @apiParam {String} walletId Unique Id of the wallet to recharge
+ * @apiParam {Number} amount The amount to be charge in [eurocents](https://en.wiktionary.org/wiki/Eurocent#English)
+ * @apiParam {String} mode Method of recharge, accepted values: "chargeCardWallet" for Payin Credit Card and "chargeBankwireWallet" for Payin BankWire
+ * @apiParam {String} [returnUrl] This field is mandatory in order to return to Application/Website when doing Payin Credit Card
+ * @apiName chargeWallet
+ * @apiGroup List Wallet
+ * @apiPermission Owner
+ * @apiSuccessExample Payin Credit Card response example
+ * {"code": 200, "message": "contribution created", "data": {"paymentUrl": "https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1mFrNegrAWRUvp2Ke3051506606925967"}, "pagination": null, "uri": "https://apidev.growish.com/v1/charge-wallet/", "method": "POST"}
+ * @apiSuccessExample Payin Bankwire response example
+ * {"code": 200, "message": "withdrawal contribution created", "data": {"bankAccountOwner": "MANGOPAY","bankAccountIBAN": "FR7618829754160173622224251","bankAccountBIC": "CMBRFR2BCME","generatedReference": "4a020559fa","amountDeclared": 10000,"id": "59ccfe93ff982249168b4568"}, "pagination": null, "uri": "https://apidev.growish.com/v1/charge-wallet/", "method": "POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('chargeWallet').save({ walletId:"59c241c6ff9822902f8b45a4", amount: 10000, mode: "chargeCardWallet", returnUrl: "https://appReturnUrl" }).then(function success(response) { }, function error(err) { });
+ */

@@ -251,6 +251,98 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/charge-wallet/",
+    "title": "Recharge List Wallet (wedding list)",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "walletId",
+            "description": "<p>Unique Id of the wallet to recharge</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>The amount to be charge in <a href=\"https://en.wiktionary.org/wiki/Eurocent#English\">eurocents</a></p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mode",
+            "description": "<p>Method of recharge, accepted values: &quot;chargeCardWallet&quot; for Payin Credit Card and &quot;chargeBankwireWallet&quot; for Payin BankWire</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "returnUrl",
+            "description": "<p>This field is mandatory in order to return to Application/Website when doing Payin Credit Card</p>"
+          }
+        ]
+      }
+    },
+    "name": "chargeWallet",
+    "group": "List_Wallet",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Payin Credit Card response example",
+          "content": "{\"code\": 200, \"message\": \"contribution created\", \"data\": {\"paymentUrl\": \"https://homologation-secure-p.payline.com/webpayment/step2.do?reqCode=prepareStep2&token=1mFrNegrAWRUvp2Ke3051506606925967\"}, \"pagination\": null, \"uri\": \"https://apidev.growish.com/v1/charge-wallet/\", \"method\": \"POST\"}",
+          "type": "json"
+        },
+        {
+          "title": "Payin Bankwire response example",
+          "content": "{\"code\": 200, \"message\": \"withdrawal contribution created\", \"data\": {\"bankAccountOwner\": \"MANGOPAY\",\"bankAccountIBAN\": \"FR7618829754160173622224251\",\"bankAccountBIC\": \"CMBRFR2BCME\",\"generatedReference\": \"4a020559fa\",\"amountDeclared\": 10000,\"id\": \"59ccfe93ff982249168b4568\"}, \"pagination\": null, \"uri\": \"https://apidev.growish.com/v1/charge-wallet/\", \"method\": \"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('chargeWallet').save({ walletId:\"59c241c6ff9822902f8b45a4\", amount: 10000, mode: \"chargeCardWallet\", returnUrl: \"https://appReturnUrl\" }).then(function success(response) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./list.js",
+    "groupTitle": "List_Wallet",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
     "url": "/list/",
     "title": "Register a new List Wallet (wedding list)",
     "parameter": {
