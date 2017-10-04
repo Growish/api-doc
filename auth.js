@@ -13,3 +13,16 @@
  * gwApi.authenticate('foo@bar.com', '12345678').then(function success(user) { }, function error(err) { });
  * @apiError 403 Invalid credentials.
  */
+
+/**
+ * @api{delete} /auth/ Logout
+ * @apiName logout
+ * @apiGroup Authorization
+ * @apiPermission Owner
+ * @apiSuccessExample
+ * {"code":200,"message":"OK","data":[],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/auth\/","method":"DELETE"}
+ * @apiUse AppKey
+ * @apiVersion 1.0.0
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('logout').delete().then(function success(user) { }, function error(err) { });
+ */

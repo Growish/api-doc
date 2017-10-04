@@ -1,5 +1,5 @@
 The Growish API documentation repo
-=========================================
+==================================
 
 Make sure you have **apidoc** install in your system, otherwise:
 
