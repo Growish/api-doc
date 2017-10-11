@@ -54,3 +54,4 @@
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('chargeWallet').save({ walletId:"59c241c6ff9822902f8b45a4", amount: 10000, mode: "chargeCardWallet", returnUrl: "https://appReturnUrl" }).then(function success(response) { }, function error(err) { });
  */
+
