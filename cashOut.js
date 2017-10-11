@@ -15,5 +15,5 @@
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('withdrawal').save({walletId: "5886138cff9822ae778b458c", beneficiaryId: "591ecd6aff98226e648b456e", amount: "200", password: "123456", pin: "2345"}).then(function success() {},function error(err) {})
- * @apiError 417 Pin request may be turned off or on, if it is off status code is 200 while it is on status code in 417, make a new request with a valid pin value
+ * @apiError 417 Pin request may be turned off or on, if it is off status code is 200 while if it is on status code in 417, make a new request with a valid pin value.
  */
