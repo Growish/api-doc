@@ -19,7 +19,7 @@
  */
 
 /**
- * @api{get} /list/:id Get a List Wallet (wedding list)
+ * @api{get} /list/:id/ Get a List Wallet (wedding list)
  * @apiParam {String} id Unique Id of the list.
  * @apiName ListWallet
  * @apiGroup List Wallet

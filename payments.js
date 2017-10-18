@@ -35,3 +35,18 @@
  * gwApi.request('transferContribution').save({amount:5000, beneficiaryWalletId: "53b157b19a6b51c4048a3484",password:"password",payerWalletId: "53b157b19a6b51c4048b4572" }).then(function success(response) { }, function error(err) { });
  */
 
+/**
+ * @api{get} /check-contribution/:id/ Check Payin Credit Card
+ * @apiParam {String} id Unique Id of the Payin Credit Card
+ * @apiName checkContribution
+ * @apiGroup Payments
+ * @apiPermission Owner
+ * @apiSuccessExample Response example
+ * {"code": 200, "message": "OK", "data": [{"message": "La tua contribuzione \u00e8 avvenuta con successo!"}], "pagination": null, "uri": "https://apidev.growish.com/v1/check-contribution/", "method": "GET"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('checkContribution', '596f1268ff9822b21b8b4598').read().then(function success(response) { }, function error(err) { });
+ */
+

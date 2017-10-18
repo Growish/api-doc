@@ -1,1 +1,18 @@
-define({  "name": "Growish API",  "version": "1.0.0",  "description": "Growish API documentation",  "header": {    "title": "Start here",    "content": "<p>Under construction!</p>\n"  },  "sampleUrl": false,  "defaultVersion": "0.0.0",  "apidoc": "0.3.0",  "generator": {    "name": "apidoc",    "time": "2017-10-11T14:27:40.959Z",    "url": "http://apidocjs.com",    "version": "0.17.6"  }});
+define({
+  "name": "Growish API",
+  "version": "1.0.0",
+  "description": "Growish API documentation",
+  "header": {
+    "title": "Start here",
+    "content": "<p>Under construction!</p>\n"
+  },
+  "sampleUrl": false,
+  "defaultVersion": "0.0.0",
+  "apidoc": "0.3.0",
+  "generator": {
+    "name": "apidoc",
+    "time": "2017-10-18T15:30:36.045Z",
+    "url": "http://apidocjs.com",
+    "version": "0.17.6"
+  }
+});
