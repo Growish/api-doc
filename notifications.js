@@ -1,5 +1,6 @@
 /**
  * @api{get} /user/:id/notification/ Get Notification
+ * @apiParam {String} :userId The user unique Id
  * @apiParam {String} category The category can be growish, wedding, scuolapay or nozzepay
  * @apiName getNotification
  * @apiGroup Notifications
@@ -16,12 +17,13 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('user.notifications', 123456789).read({category: 'growish'}).then(function success(notifications) { }, function error() { });
+ * gwApi.request('user.notifications', :userId).read({category: :category}).then(function success(notifications) { }, function error() { });
  */
 
 
 /**
  * @api{put} /checknoti/:id/ Update notification
+ * @apiParam {String} :userId The user unique Id
  * @apiName updateNotifications
  * @apiGroup Notifications
  * @apiPermission Owner
@@ -31,5 +33,5 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('notifications', 123456789).update().then(function success() { }, function error() { });
+ * gwApi.request('notifications', :userId).update().then(function success() { }, function error() { });
  */
