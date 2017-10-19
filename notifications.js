@@ -1,6 +1,6 @@
 /**
  * @api{get} /user/:id/notification/ Get Notification
- * @apiParam {String} category The category can be growish, wedding or scuolapay
+ * @apiParam {String} category The category can be growish, wedding, scuolapay or nozzepay
  * @apiName getNotification
  * @apiGroup Notifications
  * @apiPermission Owner
@@ -10,6 +10,8 @@
  * {"code":200,"message":"OK","data":[{"type":"success","read":false,"message":"Hai ricevuto un nuovo versamento. Mario Rossi ha versato 40.00 \u0026euro;","category":"wedding","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"},{"type":"messenger","read":false,"message":"La tua contribuzione \u00e8 avvenuta con successo!","category":"wedding","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"}],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/user\/587f3900ff9822b7778b457e\/notification\/?category=wedding","method":"GET"}
  * @apiSuccessExample Owner response example
  * {"code":200,"message":"OK","data":[{"type":"success","read":false,"message":"Hai ricevuto un nuovo versamento. Mario Rossi ha versato 40.00 \u0026euro;","category":"scuolapay","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"},{"type":"messenger","read":false,"message":"La tua contribuzione \u00e8 avvenuta con successo!","category":"scuolapay","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"}],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/user\/587f3900ff9822b7778b457e\/notification\/?category=scuolapay","method":"GET"}
+ * @apiSuccessExample Owner response example
+ * {"code":200,"message":"OK","data":[{"type":"success","read":false,"message":"Hai ricevuto un nuovo versamento. Mario Rossi ha versato 40.00 \u0026euro;","category":"nozzepay","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"},{"type":"messenger","read":false,"message":"La tua contribuzione \u00e8 avvenuta con successo!","category":"nozzepay","when":null,"secondActionText":null,"secondActionUrl":null,"id":"59e8739dff9822ea898b456a"}],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/user\/587f3900ff9822b7778b457e\/notification\/?category=nozzepay","method":"GET"}
  * @apiVersion 1.0.0
  * @apiUse AppKey
  * @apiUse Token
