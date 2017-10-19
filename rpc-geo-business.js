@@ -2,7 +2,7 @@
  * @api{get} /business/?lat=:lat&lon=:lon&radius=:radius&network=:network&filterByName=:name&filterByType&filterByCategory=:category Request Business in a area
  * @apiParam {Number} lat Latitude.
  * @apiParam {Number} lon Longitude.
- * @apiParam {Number} radius Radius in meters around lat, lon center (Max 50000).
+ * @apiParam {Number} [radius] Radius in meters around lat, lon center (Max 50000).
  * @apiParam {String} network A string with comma separated value indicating the name of the networks the business belongs to.
  * @apiParam {String} [filterByName] Complete or partial name of the business.
  * @apiParam {String} [filterByType] Accepted values: "physical" and "online".
@@ -11,7 +11,7 @@
  * @apiGroup Business
  * @apiPermission Public
  * @apiSuccessExample Public response example
- * {"code":200,"message":"OK","data":[{"id":"596f1268ff9822b21b8b4598", "walletId": "59cb8357ff98225d068b458c", "email":"foo@bar.com","name":"Foo Business 1","category":"Foo1Category","distance":"1500","promo":"","lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"},{"id":"596f1268ff98SSb21b8b4598", "walletId": "59cb8342ff98225d068b456e", "email":"foo@bar.com","name":"Foo Business 2","category":"Foo2Category,Foo2SecondCategory","distance":"100","promo":"","lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"}],"pagination": {"page": 1, "perPage": 50, "total": 2 }, "uri":"https:\/\/apidev.growish.com\/v1\/business\/?lat=12&lon=11","method":"GET"}
+ * {"code":200,"message":"OK","data":[{"id":"596f1268ff9822b21b8b4598", "walletId": "59cb8357ff98225d068b458c", "email":"foo@bar.com","name":"Foo Business 1","category":"Foo1Category","distance":"1500","promo": [{"algorithm": "Cashback5","description": "Godi del 5% di cashback su ogni pagamento presso questo fornitore!","imageUrl": "https://growish-partner.s3.eu-central-1.amazonaws.com/agency-network-assets/promo-placeholder.1508417084.png","placeholderUrl": "https://growish-partner.s3.eu-central-1.amazonaws.com/agency-network-assets/promo-placeholder.1508417084.png"}],"lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"},{"id":"596f1268ff98SSb21b8b4598", "walletId": "59cb8342ff98225d068b456e", "email":"foo@bar.com","name":"Foo Business 2","category":"Foo2Category,Foo2SecondCategory","distance":"100","promo":[],"lat":"11.23","lon":"12.22","address":"Via foo bar, 12, Italy"}],"pagination": {"page": 1, "perPage": 50, "total": 2 }, "uri":"https:\/\/apidev.growish.com\/v1\/business\/?lat=12&lon=11","method":"GET"}
  * @apiVersion 1.0.0
  * @apiUse AppKey
  * @apiExample {js} Angular Growish API Client:
