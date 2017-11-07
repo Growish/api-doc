@@ -21,7 +21,7 @@
 /**
  * @api{get} /list/:id/ Get a List Wallet (wedding list)
  * @apiParam {String} id Unique Id of the list.
- * @apiName ListWallet
+ * @apiName listWallet
  * @apiGroup List Wallet
  * @apiPermission Mixed
  * @apiSuccessExample Public response example
@@ -32,7 +32,7 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('newListWallet').save({ brideName:"Miss Smith",groomName:"Smith",weddingDate:"2018-03-19",province: "AN" }).then(function success(listWallet) { }, function error(err) { });
+ * gwApi.request('listWallet', 'userId').read().then(function success(listWallet) { }, function error(err) { });
  */
 
 /**
