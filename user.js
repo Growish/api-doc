@@ -67,7 +67,7 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('newUser').save({ firstName:"Jhon",lastName:"Smith",email:"foo1@email.com",birthday:"1986-03-19",canBeContacted:1, marketingEmail:1 }).then(function success(user) { }, function error(err) { });
+ * gwApi.request('newUser').save({ firstName:"Jhon",lastName:"Smith",email:"foo1@email.com",birthday:"1986-03-19",canBeContacted:1, marketingEmail:1, refeffarl: "gktl" }).then(function success(user) { }, function error(err) { });
  */
 
 /**
