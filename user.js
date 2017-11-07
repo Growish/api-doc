@@ -55,6 +55,7 @@
  * @apiParam {String} firstName The user first name
  * @apiParam {String} lastName The user last name
  * @apiParam {String} birthday The user date of birth in YYYY-MM-GG format
+ * @apiParam {String} referral The user referral code
  * @apiParam {Number} canBeContacted Legacy field, must be set to 1
  * @apiParam {Number} marketingEmail Legacy field, must be set to 1
  * @apiName newUser
