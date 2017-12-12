@@ -55,6 +55,7 @@
  * @apiParam {String} firstName The user first name
  * @apiParam {String} lastName The user last name
  * @apiParam {String} birthday The user date of birth in YYYY-MM-GG format
+ * @apiParam {String} referral The user referral code
  * @apiParam {Number} canBeContacted Legacy field, must be set to 1
  * @apiParam {Number} marketingEmail Legacy field, must be set to 1
  * @apiName newUser
@@ -66,7 +67,7 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('newUser').save({ firstName:"Jhon",lastName:"Smith",email:"foo1@email.com",birthday:"1986-03-19",canBeContacted:1, marketingEmail:1 }).then(function success(user) { }, function error(err) { });
+ * gwApi.request('newUser').save({ firstName:"Jhon",lastName:"Smith",email:"foo1@email.com",birthday:"1986-03-19",canBeContacted:1, marketingEmail:1, referral: "gktl" }).then(function success(user) { }, function error(err) { });
  */
 
 /**
