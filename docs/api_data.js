@@ -535,6 +535,52 @@ define({ "api": [
     }
   },
   {
+    "type": "get",
+    "url": "/blog-posts/",
+    "title": "Return Blog Posts",
+    "name": "blogPosts",
+    "group": "List_Wallet",
+    "permission": [
+      {
+        "name": "Public",
+        "title": "No token is required to access this asset",
+        "description": ""
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":[{\"title\":\"Il galateo del matrimonio civile\",\"description\":\"\\u003Cp\\u003EOggi, vogliamo sfatare una diceria comune, cio\\u00e8 che quello civile, sia un matrimonio \\u0026#8220;di serie B\\u0026#8221;. Molti ne sono davvero convinti purtroppo, ma in realt\\u00e0, non \\u00e8 cos\\u00ec. Anche il matrimonio civile ha le sue regole di bon ton, da seguire. Ecco Il galateo del matrimonio civile.\\u003C\\/p\\u003E\\n\",\"link\":\"https:\\/\\/blog.listanozzeonline.com\\/galateo-del-matrimonio-civile\\/\",\"image\":\"https:\\/\\/blog.listanozzeonline.com\\/wp-content\\/uploads\\/2017\\/12\\/Il-galateo-del-matrimonio-civile-300x143.jpg\"},{\"title\":\"5 consigli per il tuo matrimonio in inverno\",\"description\":\"\\u003Cp\\u003EHai mai pensato di celebrare il tuo matrimonio in inverno? E\\u0026#8217; vero, questa stagione \\u00e8 fredda e le temperature rigide spesso impongono diverse limitazioni. Ma diciamocelo:\\u00a0con i dovuti accorgimenti, l\\u0026#8217;inverno \\u00e8 uno di quei periodi pi\\u00f9 magici e suggestivi\\u00a0per celebrare un matrimonio \\u0026#8220;da fiaba\\u0026#8221;, circondati dall\\u2019incantevole atmosfera\\u00a0che solo questa stagione regala. Qui vi spieghiamo come\\u0026#8230; \\u003C\\/p\\u003E\\n\\u003Cdiv class=\\u0022clear\\u0022\\u003E\\u003C\\/div\\u003E\\n\\u003Cp\\u003E\\u003Ca href=\\u0022https:\\/\\/blog.listanozzeonline.com\\/5-consigli-matrimonio-inverno\\/\\u0022 class=\\u0022gdlr-button with-border excerpt-read-more\\u0022\\u003EContinua a leggere\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n\",\"link\":\"https:\\/\\/blog.listanozzeonline.com\\/5-consigli-matrimonio-inverno\\/\",\"image\":\"https:\\/\\/blog.listanozzeonline.com\\/wp-content\\/uploads\\/2017\\/10\\/matrimonio-in-inverno-2-300x143.jpg\"},{\"title\":\"I documenti necessari per sposarsi\",\"description\":\"\\u003Cp\\u003EState organizzando il matrimonio? Avete gi\\u00e0 pensato a tutti i documenti necessari per sposarsi? Organizzare un matrimonio non \\u00e8 solo stressante, \\u00e8 anche stimolante e divertente. Contattare la location, allestirla come si \\u00e8 sempre sognato, poi scegliere l\\u0026#8217;abito da sposa\\u0026#8230; Momenti unici e indimenticabili s\\u00ec, ma non dimenticatevi la burocrazia.\\u003C\\/p\\u003E\\n\",\"link\":\"https:\\/\\/blog.listanozzeonline.com\\/documenti-necessari-sposarsi\\/\",\"image\":\"https:\\/\\/blog.listanozzeonline.com\\/wp-content\\/uploads\\/2017\\/10\\/fedi-300x143.jpg\"}],\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/blog-posts\\/\",\"method\":\"GET\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('blogPosts').read().then(function success(blogPosts) { }, function error() { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./list.js",
+    "groupTitle": "List_Wallet",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "post",
     "url": "/charge-wallet/",
     "title": "Recharge List Wallet (wedding list)",
@@ -621,6 +667,86 @@ define({ "api": [
             "optional": false,
             "field": "X-Auth-Token",
             "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/download-ebook/",
+    "title": "Download Ebook",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>The user name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>The user email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "province",
+            "description": "<p>The province of wedding list</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "weddingDate",
+            "description": "<p>The date of wedding in YYYY-MM-GG format</p>"
+          }
+        ]
+      }
+    },
+    "name": "downloadEbook",
+    "group": "List_Wallet",
+    "permission": [
+      {
+        "name": "Public",
+        "title": "No token is required to access this asset",
+        "description": ""
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":{\"ebookUrl\":\"https:\\/\\/s3.eu-central-1.amazonaws.com\\/growish-partner\\/ebook-nozze.pdf\"},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/download-ebook\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('downloadEbook').save({ name: \"fooname\", email:\"foo1@email.com\", province: \"MI\", weddingDate: \"2018-12-31\"}).then(function success(data) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./list.js",
+    "groupTitle": "List_Wallet",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
           }
         ]
       }
@@ -722,6 +848,79 @@ define({ "api": [
             "optional": false,
             "field": "X-Auth-Token",
             "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/pre-user/",
+    "title": "Register pre User info during List Wallet Wizard (wedding list)",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>The user email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "province",
+            "description": "<p>The province of wedding list</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "weddingDate",
+            "description": "<p>The date of wedding in YYYY-MM-GG format</p>"
+          }
+        ]
+      }
+    },
+    "name": "preUser",
+    "group": "List_Wallet",
+    "permission": [
+      {
+        "name": "Public",
+        "title": "No token is required to access this asset",
+        "description": ""
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"message\":\"OK\",\"data\": [],\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/pre-user\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('preUser').save({ email:\"foo1@email.com\", province: \"MI\", weddingDate: \"2018-12-31\"}).then(function success() { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./list.js",
+    "groupTitle": "List_Wallet",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
           }
         ]
       }
@@ -1175,6 +1374,180 @@ define({ "api": [
             "optional": false,
             "field": "X-Auth-Token",
             "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/saas-business/",
+    "title": "Saas Business Contact",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>The user name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "activity",
+            "description": "<p>The business activity</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "company",
+            "description": "<p>The business company</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "website",
+            "description": "<p>The business web site</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": true,
+            "field": "phone",
+            "description": "<p>The user or business phone number</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>The user or business email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "message",
+            "description": "<p>The message</p>"
+          }
+        ]
+      }
+    },
+    "name": "saasBusiness",
+    "group": "Saas",
+    "permission": [
+      {
+        "name": "Public",
+        "title": "No token is required to access this asset",
+        "description": ""
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"message\":\"Il formulario di contatto è stato spedito.\",\"data\": [], \"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/saas-business\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('saasBusiness').save({ name: \"foo\", activity: \"footest\", company: \"foocompany\", website: \"https://foocompany.com\", phone: \"3200000000\", email:\"foo1@email.com\", message: \"foo message\"}).then(function success(user) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./saas.js",
+    "groupTitle": "Saas",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/saas-partner/",
+    "title": "Saas Partner Contact",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>The user name</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>The user email</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>The user phone number</p>"
+          }
+        ]
+      }
+    },
+    "name": "saasPartner",
+    "group": "Saas",
+    "permission": [
+      {
+        "name": "Public",
+        "title": "No token is required to access this asset",
+        "description": ""
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"message\":\"Il formulario di contatto è stato spedito.\",\"data\": [], \"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/saas-partner\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('saasPartner').save({ name: \"foo\", email:\"foo1@email.com\", phone: \"3200000000\"}).then(function success(user) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./saas.js",
+    "groupTitle": "Saas",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
           }
         ]
       }
@@ -2441,6 +2814,86 @@ define({ "api": [
       {
         "title": "Angular Growish API Client:",
         "content": "gwApi.request('user', 'someUserId').update({ firstName:\"Jhon2\" }).then(function success(user) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./user.js",
+    "groupTitle": "User",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/user-kyc-authentication/",
+    "title": "Kyc User Authentication",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": false,
+            "field": "requiredFile",
+            "description": "<p>required document file into one format (pdf/png/jpg/gif)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "File",
+            "optional": true,
+            "field": "optionalFile",
+            "description": "<p>document file into format (pdf/png/jpg/gif)</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "occupation",
+            "description": "<p>the occupation of user</p>"
+          }
+        ]
+      }
+    },
+    "name": "userKycAuthentication",
+    "group": "User",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Owner response example",
+          "content": "{\"code\":200,\"message\":\"Le informazioni sono state ricevute e sono in attesa di verifica.\",\"data\":[],\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/user\\/user-kyc-authentication/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('userKycAuthentication').save(data).then(function success() { }, function error() { });",
         "type": "js"
       }
     ],

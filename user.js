@@ -294,3 +294,20 @@
  * gwApi.request('user.addressBookShare', 'someUserId').save({recipients:[], contacts: []}).then(function success() { }, function error() { });
  */
 
+/**
+ * @api{post} /user-kyc-authentication/ Kyc User Authentication
+ * @apiParam {File} requiredFile required document file into one format (pdf/png/jpg/gif)
+ * @apiParam {File} [optionalFile] document file into format (pdf/png/jpg/gif)
+ * @apiParam {String} occupation the occupation of user
+ * @apiName userKycAuthentication
+ * @apiGroup User
+ * @apiPermission Owner
+ * @apiSuccessExample Owner response example
+ * {"code":200,"message":"Le informazioni sono state ricevute e sono in attesa di verifica.","data":[],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/user\/user-kyc-authentication/","method":"POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('userKycAuthentication').save(data).then(function success() { }, function error() { });
+ */
+

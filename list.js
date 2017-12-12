@@ -55,3 +55,49 @@
  * gwApi.request('chargeWallet').save({ walletId:"59c241c6ff9822902f8b45a4", amount: 10000, mode: "chargeCardWallet", returnUrl: "https://appReturnUrl" }).then(function success(response) { }, function error(err) { });
  */
 
+/**
+ * @api{get} /blog-posts/ Return Blog Posts
+ * @apiName blogPosts
+ * @apiGroup List Wallet
+ * @apiPermission Public
+ * @apiSuccessExample Public response example
+ * {"code":200,"data":[{"title":"Il galateo del matrimonio civile","description":"\u003Cp\u003EOggi, vogliamo sfatare una diceria comune, cio\u00e8 che quello civile, sia un matrimonio \u0026#8220;di serie B\u0026#8221;. Molti ne sono davvero convinti purtroppo, ma in realt\u00e0, non \u00e8 cos\u00ec. Anche il matrimonio civile ha le sue regole di bon ton, da seguire. Ecco Il galateo del matrimonio civile.\u003C\/p\u003E\n","link":"https:\/\/blog.listanozzeonline.com\/galateo-del-matrimonio-civile\/","image":"https:\/\/blog.listanozzeonline.com\/wp-content\/uploads\/2017\/12\/Il-galateo-del-matrimonio-civile-300x143.jpg"},{"title":"5 consigli per il tuo matrimonio in inverno","description":"\u003Cp\u003EHai mai pensato di celebrare il tuo matrimonio in inverno? E\u0026#8217; vero, questa stagione \u00e8 fredda e le temperature rigide spesso impongono diverse limitazioni. Ma diciamocelo:\u00a0con i dovuti accorgimenti, l\u0026#8217;inverno \u00e8 uno di quei periodi pi\u00f9 magici e suggestivi\u00a0per celebrare un matrimonio \u0026#8220;da fiaba\u0026#8221;, circondati dall\u2019incantevole atmosfera\u00a0che solo questa stagione regala. Qui vi spieghiamo come\u0026#8230; \u003C\/p\u003E\n\u003Cdiv class=\u0022clear\u0022\u003E\u003C\/div\u003E\n\u003Cp\u003E\u003Ca href=\u0022https:\/\/blog.listanozzeonline.com\/5-consigli-matrimonio-inverno\/\u0022 class=\u0022gdlr-button with-border excerpt-read-more\u0022\u003EContinua a leggere\u003C\/a\u003E\u003C\/p\u003E\n","link":"https:\/\/blog.listanozzeonline.com\/5-consigli-matrimonio-inverno\/","image":"https:\/\/blog.listanozzeonline.com\/wp-content\/uploads\/2017\/10\/matrimonio-in-inverno-2-300x143.jpg"},{"title":"I documenti necessari per sposarsi","description":"\u003Cp\u003EState organizzando il matrimonio? Avete gi\u00e0 pensato a tutti i documenti necessari per sposarsi? Organizzare un matrimonio non \u00e8 solo stressante, \u00e8 anche stimolante e divertente. Contattare la location, allestirla come si \u00e8 sempre sognato, poi scegliere l\u0026#8217;abito da sposa\u0026#8230; Momenti unici e indimenticabili s\u00ec, ma non dimenticatevi la burocrazia.\u003C\/p\u003E\n","link":"https:\/\/blog.listanozzeonline.com\/documenti-necessari-sposarsi\/","image":"https:\/\/blog.listanozzeonline.com\/wp-content\/uploads\/2017\/10\/fedi-300x143.jpg"}],"message":"OK","pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/blog-posts\/","method":"GET"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('blogPosts').read().then(function success(blogPosts) { }, function error() { });
+ */
+
+/**
+ * @api{post} /download-ebook/ Download Ebook
+ * @apiParam {String} name The user name
+ * @apiParam {String} email The user email
+ * @apiParam {String} province The province of wedding list
+ * @apiParam {String} weddingDate The date of wedding in YYYY-MM-GG format
+ * @apiName downloadEbook
+ * @apiGroup List Wallet
+ * @apiPermission Public
+ * @apiSuccessExample Public response example
+ * {"code":200,"data":{"ebookUrl":"https:\/\/s3.eu-central-1.amazonaws.com\/growish-partner\/ebook-nozze.pdf"},"message":"OK","pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/download-ebook\/","method":"POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('downloadEbook').save({ name: "fooname", email:"foo1@email.com", province: "MI", weddingDate: "2018-12-31"}).then(function success(data) { }, function error(err) { });
+ */
+
+/**
+ * @api{post} /pre-user/ Register pre User info during List Wallet Wizard (wedding list)
+ * @apiParam {String} email The user email
+ * @apiParam {String} province The province of wedding list
+ * @apiParam {String} weddingDate The date of wedding in YYYY-MM-GG format
+ * @apiName preUser
+ * @apiGroup List Wallet
+ * @apiPermission Public
+ * @apiSuccessExample Public response example
+ * {"code":200,"message":"OK","data": [],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/pre-user\/","method":"POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('preUser').save({ email:"foo1@email.com", province: "MI", weddingDate: "2018-12-31"}).then(function success() { }, function error(err) { });
+ */
+
