@@ -309,6 +309,6 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('userKycAuthentication').save(data).then(function success() { }, function error() { });
+ * gwApi.request('userKycAuthentication').save({occupation: "developer", requiredFile: file1, optionalFile: file2}).then(function success() { }, function error() { });
  */
 
