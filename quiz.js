@@ -28,6 +28,21 @@
  */
 
 /**
+ * @api{post} /list/:list_id/quiz-answers/ Send answers for quiz
+ * @apiName list.quizAnswers
+ * @apiGroup Quiz
+ * @apiPermission Owner
+ * @apiParam {String} json encoded answers
+ * @apiSuccessExample Public response example
+ {"code":200,"data":[],"message":"Congratulazioni, hai completato il quiz","pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/list\/5a212f07ff98225d5e8b457e\/quiz-answers\/","method":"POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('list.quizAnswers', someListId).save({answers: "[{\"questionId\": \"5a817660ff982283258b456a\", \"answersIds\": [1,2]},{\"questionId\": \"5a817668ff98225e088b4568\", \"answersIds\": [1,2,3]},{\"questionId\": \"5a81766fff982286438b456f\", \"answersIds\": [1,2]}]"}).then(function success(response) { }, function error() { });
+ */
+
+/**
  * @api{post} /quiz/:quiz_id/question/ Add new question for quiz
  * @apiName quiz.newQuestion
  * @apiGroup Quiz
@@ -68,4 +83,3 @@
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('quiz.question', someQuizId, someQuestionId).delete().then(function success(quiz) { }, function error(err) { });
  */
-

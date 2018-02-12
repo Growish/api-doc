@@ -1566,6 +1566,72 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/list/:list_id/quiz-answers/",
+    "title": "Send answers for quiz",
+    "name": "list_quizAnswers",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "json",
+            "description": "<p>encoded answers</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":[],\"message\":\"Congratulazioni, hai completato il quiz\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/list\\/5a212f07ff98225d5e8b457e\\/quiz-answers\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('list.quizAnswers', someListId).save({answers: \"[{\\\"questionId\\\": \\\"5a817660ff982283258b456a\\\", \\\"answersIds\\\": [1,2]},{\\\"questionId\\\": \\\"5a817668ff98225e088b4568\\\", \\\"answersIds\\\": [1,2,3]},{\\\"questionId\\\": \\\"5a81766fff982286438b456f\\\", \\\"answersIds\\\": [1,2]}]\"}).then(function success(response) { }, function error() { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "delete",
     "url": "/quiz/:quiz_id/question/:id/",
     "title": "Delete question from quiz",
