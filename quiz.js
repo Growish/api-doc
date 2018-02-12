@@ -24,7 +24,7 @@
  * @apiUse AppKey
  * @apiUse Token
  * @apiExample {js} Angular Growish API Client:
- * gwApi.request('list.quiz', someListId, quizId).update({state: 1}).then(function success(quiz) { }, function error() { });
+ * gwApi.request('list.editQuiz', someListId, quizId).update({state: 1}).then(function success(quiz) { }, function error() { });
  */
 
 /**

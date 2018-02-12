@@ -1485,7 +1485,7 @@
     "examples": [
       {
         "title": "Angular Growish API Client:",
-        "content": "gwApi.request('list.quiz', someListId, quizId).update({state: 1}).then(function success(quiz) { }, function error() { });",
+        "content": "gwApi.request('list.editQuiz', someListId, quizId).update({state: 1}).then(function success(quiz) { }, function error() { });",
         "type": "js"
       }
     ],
