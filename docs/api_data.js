@@ -1447,6 +1447,284 @@ define({ "api": [
     }
   },
   {
+    "type": "put",
+    "url": "/list/:list_id/quiz/:id/",
+    "title": "Update quiz for list wallet",
+    "name": "list_editQuiz",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "state",
+            "description": "<p>The state of quiz [0|1]</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":{\"walletId\":\"5a212f07ff98225d5e8b457e\",\"state\":1,\"id\":\"5a815f1dff9822080f8b4568\",\"questions\":[{\"title\":\"first question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817660ff982283258b456a\"},{\"title\":\"second question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817668ff98225e088b4568\"},{\"title\":\"third question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a81766fff982286438b456f\"}]},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/list\\/5a212f07ff98225d5e8b457e\\/quiz\\/\",\"method\":\"GET\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('list.quiz', someListId, quizId).update({state: 1}).then(function success(quiz) { }, function error() { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "get",
+    "url": "/list/:list_id/quiz/",
+    "title": "Return quiz for list wallet",
+    "name": "list_quiz",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":{\"walletId\":\"5a212f07ff98225d5e8b457e\",\"state\":1,\"id\":\"5a815f1dff9822080f8b4568\",\"questions\":[{\"title\":\"first question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817660ff982283258b456a\"},{\"title\":\"second question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817668ff98225e088b4568\"},{\"title\":\"third question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a81766fff982286438b456f\"}]},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/list\\/5a212f07ff98225d5e8b457e\\/quiz\\/\",\"method\":\"GET\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('list.quiz',someListId).read().then(function success(quiz) { }, function error() { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "delete",
+    "url": "/quiz/:quiz_id/question/:id/",
+    "title": "Delete question from quiz",
+    "name": "quiz_deleteQuestion",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Owner response example",
+          "content": "{\"code\":200,\"data\":{\"walletId\":\"5a212f07ff98225d5e8b457e\",\"state\":1,\"id\":\"5a815f1dff9822080f8b4568\",\"questions\":[{\"title\":\"first question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817660ff982283258b456a\"},{\"title\":\"second question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817668ff98225e088b4568\"},{\"title\":\"third question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a81766fff982286438b456f\"}]},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/quiz\\/5a815f1dff9822080f8b4568\\/question\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('quiz.question', someQuizId, someQuestionId).delete().then(function success(quiz) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/quiz/:quiz_id/question/",
+    "title": "Add new question for quiz",
+    "name": "quiz_newQuestion",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Owner response example",
+          "content": "{\"code\":200,\"data\":{\"walletId\":\"5a212f07ff98225d5e8b457e\",\"state\":1,\"id\":\"5a815f1dff9822080f8b4568\",\"questions\":[{\"title\":\"first question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817660ff982283258b456a\"},{\"title\":\"second question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817668ff98225e088b4568\"},{\"title\":\"third question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a81766fff982286438b456f\"}]},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/quiz\\/5a815f1dff9822080f8b4568\\/question\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('quiz.newQuestion').save({title: \"first question\", multipleSelect: 1, answers: \"[{\\\"text\\\": \\\"first answer\\\", \\\"correct\\\": 1},{\\\"text\\\": \\\"second answer\\\", \\\"correct\\\": 1},{\\\"text\\\": \\\"third answer\\\", \\\"correct\\\": 0}]\"}).then(function success(quiz) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "put",
+    "url": "/quiz/:quiz_id/question/:id/",
+    "title": "Edit question into quiz",
+    "name": "quiz_question",
+    "group": "Quiz",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Owner response example",
+          "content": "{\"code\":200,\"data\":{\"walletId\":\"5a212f07ff98225d5e8b457e\",\"state\":1,\"id\":\"5a815f1dff9822080f8b4568\",\"questions\":[{\"title\":\"first question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817660ff982283258b456a\"},{\"title\":\"second question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a817668ff98225e088b4568\"},{\"title\":\"third question\",\"multipleSelect\":1,\"answers\":[{\"id\":1,\"text\":\"first answer\",\"correct\":1},{\"id\":2,\"text\":\"second answer\",\"correct\":1},{\"id\":3,\"text\":\"third answer\",\"correct\":0}],\"id\":\"5a81766fff982286438b456f\"}]},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/quiz\\/5a815f1dff9822080f8b4568\\/question\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('quiz.question', someQuizId, someQuestionId).update({title: \"first question\", multipleSelect: 1, answers: \"[{\\\"text\\\": \\\"first answer\\\", \\\"correct\\\": 1},{\\\"text\\\": \\\"second answer\\\", \\\"correct\\\": 1},{\\\"text\\\": \\\"third answer\\\", \\\"correct\\\": 0}]\"}).then(function success(quiz) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./quiz.js",
+    "groupTitle": "Quiz",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "post",
     "url": "/saas-business/",
     "title": "Saas Business Contact",
