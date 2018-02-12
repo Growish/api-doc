@@ -83,3 +83,17 @@
  * @apiExample {js} Angular Growish API Client:
  * gwApi.request('quiz.question', someQuizId, someQuestionId).delete().then(function success(quiz) { }, function error(err) { });
  */
+
+/**
+ * @api{get} /quiz-ranking/:list_id/ Get top three users quiz ranking position
+ * @apiName quizRanking
+ * @apiGroup Quiz
+ * @apiPermission Owner
+ * @apiSuccessExample Owner response example
+ {"code":200,"data":[[{"pos":1,"score":3,"user":{"id":"542146de9a6b51c9048b4567","firstName":"Lorenzo","lastName":"Colombini","email":"lorenzo.colombini@growish.com","imageUrl":"https:\/\/apidev.growish.com\/v1\/user\/542146de9a6b51c9048b4567\/image\/"}}],[{"pos":2,"score":2,"user":{"id":"542146de9a6b51c9048b4567","firstName":"Lorenzo","lastName":"Colombini","email":"lorenzo.colombini@growish.com","imageUrl":"https:\/\/apidev.growish.com\/v1\/user\/542146de9a6b51c9048b4567\/image\/"}},{"pos":2,"score":2,"user":{"id":"542146de9a6b51c9048b4567","firstName":"Lorenzo","lastName":"Colombini","email":"lorenzo.colombini@growish.com","imageUrl":"https:\/\/apidev.growish.com\/v1\/user\/542146de9a6b51c9048b4567\/image\/"}}],[{"pos":3,"score":1,"user":{"id":"542146de9a6b51c9048b4567","firstName":"Lorenzo","lastName":"Colombini","email":"lorenzo.colombini@growish.com","imageUrl":"https:\/\/apidev.growish.com\/v1\/user\/542146de9a6b51c9048b4567\/image\/"}}]],"message":"OK","pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/quiz-ranking\/5a212f07ff98225d5e8b457e\/","method":"GET"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('quiz.Ranking',someListId).read().then(function success(response) { }, function error(err) { });
+ */
