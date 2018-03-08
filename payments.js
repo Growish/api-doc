@@ -16,6 +16,24 @@
  * gwApi.request('sendMoney').save({ amount:5000,email:"foo@bar.com",password:"password",walletId: "53b157b19a6b51c4048b4572" }).then(function success(response) { }, function error(err) { });
  */
 
+/**
+ * @api{post} /transfer-business/ Growish Payment to a business
+ * @apiParam {Number} amount The amount to be transfer in [eurocents](https://en.wiktionary.org/wiki/Eurocent#English)
+ * @apiParam {String} email Email of the beneficiary of the transaction
+ * @apiParam {String} password Password of the current logged user
+ * @apiParam {String} walletId The payer wallet unique Id
+ * @apiName sendMoneyBusiness
+ * @apiGroup Payments
+ * @apiPermission Owner
+ * @apiSuccessExample Owner response example
+ * {"code":200,"message":"Soldi trasferiti con successo","data":[],"pagination":null,"uri":"https:\/\/apidev.growish.com\/v1\/transfer-business\/","method":"POST"}
+ * @apiVersion 1.0.0
+ * @apiUse AppKey
+ * @apiUse Token
+ * @apiExample {js} Angular Growish API Client:
+ * gwApi.request('sendMoneyBusiness').save({ amount:5000,email:"foo@bar.com",password:"password",walletId: "53b157b19a6b51c4048b4572" }).then(function success(response) { }, function error(err) { });
+ */
+
 
 /**
  * @api{post} /transfer_contribution/ Transfers money from wallet to wallet

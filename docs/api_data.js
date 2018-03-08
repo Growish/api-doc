@@ -1274,6 +1274,93 @@ define({ "api": [
   },
   {
     "type": "post",
+    "url": "/transfer-business/",
+    "title": "Growish Payment to a business",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>The amount to be transfer in <a href=\"https://en.wiktionary.org/wiki/Eurocent#English\">eurocents</a></p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Email of the beneficiary of the transaction</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "password",
+            "description": "<p>Password of the current logged user</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "walletId",
+            "description": "<p>The payer wallet unique Id</p>"
+          }
+        ]
+      }
+    },
+    "name": "sendMoneyBusiness",
+    "group": "Payments",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Owner response example",
+          "content": "{\"code\":200,\"message\":\"Soldi trasferiti con successo\",\"data\":[],\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/transfer-business\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('sendMoneyBusiness').save({ amount:5000,email:\"foo@bar.com\",password:\"password\",walletId: \"53b157b19a6b51c4048b4572\" }).then(function success(response) { }, function error(err) { });",
+        "type": "js"
+      }
+    ],
+    "filename": "./payments.js",
+    "groupTitle": "Payments",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
     "url": "/transfer/",
     "title": "Payment to a business",
     "parameter": {
