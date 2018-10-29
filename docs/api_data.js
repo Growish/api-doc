@@ -2290,6 +2290,173 @@ define({ "api": [
     }
   },
   {
+    "type": "post",
+    "url": "/bank-mandate/",
+    "title": "Create User Wallet Bank Mandate for Sepa Direct Debit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "iban",
+            "description": "<p>The bank account iban</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>The bank account owner address</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "budgetAmount",
+            "description": "<p>The budget amount for User Wallet</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "returnUrl",
+            "description": "<p>Return url after confirmation on mangopay page</p>"
+          }
+        ]
+      }
+    },
+    "name": "BankMandate",
+    "group": "SepaDirectDebit",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":{\"mandateUrl\":\"https:\\/\\/api.sandbox.mangopay.com\\/public\\/mandates\\/e8a73d\\/cbfee6258cc44af0b4e73dca6435abcf\\/confirmation\"},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/bank-mandate\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('bankMandate').save({iban: \"FR7611808009101234567890147\", address: \"Test\", budgetAmount: 10000, returnUrl: \"http://127.0.0.1:8080\" }).then(function success(response) {},function error(err) {});",
+        "type": "js"
+      }
+    ],
+    "filename": "./sepa-direct-debit.js",
+    "groupTitle": "SepaDirectDebit",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "post",
+    "url": "/sepa-direct-debit/",
+    "title": "User Wallet payin with Sepa Direct Debit",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "walletId",
+            "description": "<p>The wallet Id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "mandateId",
+            "description": "<p>The mandate Id</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "amount",
+            "description": "<p>The amount to pay in</p>"
+          }
+        ]
+      }
+    },
+    "name": "SepaDirectDebit",
+    "group": "SepaDirectDebit",
+    "permission": [
+      {
+        "name": "Owner",
+        "title": "Owner access only",
+        "description": "<p>Only the author of one of the assets can create/read/modify/delete it, a token from the author is required.</p>"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Public response example",
+          "content": "{\"code\":200,\"data\":{\"amount\":10000,\"statementDescriptor\":\"GrowishPay ricarica conto personale tramite Sepa Direct Debit\",\"mangopayStatus\":\"CREATED\",\"id\":\"5bd6e947ff98223a408b4569\"},\"message\":\"OK\",\"pagination\":null,\"uri\":\"https:\\/\\/apidev.growish.com\\/v1\\/sepa-direct-debit\\/\",\"method\":\"POST\"}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "1.0.0",
+    "examples": [
+      {
+        "title": "Angular Growish API Client:",
+        "content": "gwApi.request('sepaDirectDebit').save({walletId: \"57cec46aff9822c4038b4590\", mandateId: \"5bbe0927ff9822e1638b4579\", amount: 10000}).then(function success(response) {},function error(err) {});",
+        "type": "js"
+      }
+    ],
+    "filename": "./sepa-direct-debit.js",
+    "groupTitle": "SepaDirectDebit",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-App-Key",
+            "description": "<p>Api client app key.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "X-Auth-Token",
+            "description": "<p>The user token.</p>"
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "get",
     "url": "/statement/:id",
     "title": "Gets the statement of a wallet or list wallet",
